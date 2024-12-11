@@ -1,6 +1,12 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
+import { ClerkProvider } from "@clerk/nextjs";
+
+
+const clerkKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+console.log("Clerk Publishable Key:", process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY);
+
 
 
 const geistSans = Geist({
@@ -18,8 +24,9 @@ export const metadata = {
   description: "Meeting Scheduling app",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children}) {
   return (
+    <ClerkProvider  publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {/*header */}
@@ -36,5 +43,6 @@ export default function RootLayout({ children }) {
           
       </body>
     </html>
+    </ClerkProvider>
   );
 }
