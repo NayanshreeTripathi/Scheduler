@@ -9,7 +9,7 @@ const isPortectedRoute = createRouteMatcher([
 export default clerkMiddleware((auth, req) => {
     try {
         if (!auth().userId && isPortectedRoute(req)) {
-            return auth().redirectToSignIn();
+            return auth().redirectToSignIn;
         }
     } catch (error) {
         console.error('Middleware Error:', error);
