@@ -43,8 +43,27 @@ const AppLayout = ({children}) => {
                         {navItems.find((item) => item.href === pathname).label || "Dashboard"}
                     </h2>
                 </header>
+                {children}
             </main>
-            {children}
+
+            <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white shadow-md">
+             <ul className="flex justify-around">
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className={`flex flex-col items-center py-2 px-4 ${
+                    pathname === item.href ? "text-blue-600" : "text-gray-600"
+                  }`}
+                >
+                  <item.icon className="w-6 h-6" />
+                  <span className="text-xs mt-1">{item.label}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+            
         </div>
         
     </div>

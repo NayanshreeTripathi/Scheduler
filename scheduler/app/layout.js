@@ -35,8 +35,8 @@ export default function RootLayout({ children}) {
             {children}
         </main>
         {/* footer */}
-        <footer className="bg-slate-900 py-12 text-white">
-          <div className="container mx-auto px-4 text-center">
+        <footer className="bg-slate-900 py-10 text-white">
+          <div className="container mx-auto px-4 pb-6 text-center">
             <p>Schedule your day with schedulrr</p>
           </div>
         </footer>
