@@ -23,7 +23,7 @@ const Header = async() => {
         />
         </Link>
         <div className='flex items-center gap-4'>
-            <Link href={'/events?create=true'}>
+            <Link href={'?create=true'}>
             <Button className='flex items-center gap-2'><PenBox size={18}/> Create event</Button></Link>
             <SignedOut>
                 <SignInButton forceRedirectUrl='/dashboard'>

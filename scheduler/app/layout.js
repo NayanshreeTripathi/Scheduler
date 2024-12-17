@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import { ClerkProvider } from "@clerk/nextjs";
+import CreateEventDrawer from "@/components/create-event";
 
 
 const clerkKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
@@ -40,7 +41,7 @@ export default function RootLayout({ children}) {
             <p>Schedule your day with schedulrr</p>
           </div>
         </footer>
-          
+        <CreateEventDrawer/>
       </body>
     </html>
     </ClerkProvider>
