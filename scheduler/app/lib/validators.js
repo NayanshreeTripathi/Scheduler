@@ -13,7 +13,7 @@ export const usernameSchema = z.object({
 });
 
 export const eventSchema = z.object({
-   tittle:z
+   title:z
     .string()
     .min(1,"Tittle is required")
     .max(100 , "Tittle must be 100 character or less"),
